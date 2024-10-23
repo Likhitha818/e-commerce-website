@@ -1,0 +1,78 @@
+<html>
+<head>
+   <title> payment</title>
+   <style>
+    body{
+        background-image: url(https://img.freepik.com/premium-photo/book-stack-library-room-blurred-bookshelf-background_42691-514.jpg);
+    }
+    .abc{
+background-color: rgb(230, 230, 157);
+height:325px;
+width:380px;
+text-align: center;
+border-radius: 8px;
+}
+btn:hover(){
+    opacity: inherit;
+}
+   </style>
+</head>
+<body>
+    <header>
+        <center><h2 style="color: rgb(144, 96, 6);">www.amazon.com</h2></center>
+    </header>
+    <p><b><center> <a href="cart1.html">back to cart</a><h1>Payment</h1></center></b><h2><right><a href="profile2.html.html">profile</a></br><a href="catalog1.html">catalogue</a></br><a href="ordercon.html">order confirmation</a></right></h2></b></p>
+   <center> <section class="abc">
+        <section class="abcd">
+        <form>
+            <p>Cardholder name</br></p>
+         <input type="text" placeholder="enter name on card" id="cname"></br>
+            <p>Card number</br></p>
+            <input type="number" placeholder="enter cardnumber" id="cnum"></br>
+            
+         <p>Expiry date</br></p>
+         <input type="date" id="dat"/>
+         <p> CVV</br></p>
+         <input type="number"  placeholder="CVV" id="cvv"/>
+         
+        </form>
+        </section>
+        <bottom>
+    <section class="btn" >
+        <form>
+            <button style="width: 120px;height: 30px;border-radius:8px;border: none;width: 160px; background-color: rgb(76, 194, 76); cursor: pointer;" onclick="paynow()">Pay Now</button>
+        </form>
+    </section>
+        </bottom>
+    </section>
+   </center>
+</body>
+<script>
+    function paynow(){
+        let cnames=document.getElementById("cname").value; 
+               let cnumb=document.getElementById("cnum").value;
+               let cvvc=document.getElementById("cvv").value;
+               let dated=document.getElementById("dat").value;
+               let regex = /^[a-zA-Z0-9]+$/;
+               let res = regex.test(cnames);
+               if (cnames === "" || cnumb === "" || cvvc === "" || dated === "") {
+alert("enter all details");
+               }
+              else if(!res)
+               {
+                alert("enter valid name");
+               }
+               else if(cnumb.length !== 12)
+               {
+                alert("enter 12digits of cardnumber");
+               }
+               else if(cvvc.length !== 3)
+               {
+                alert("enter 3 digits of correct cvv");
+               }
+else{
+alert("payment successfull");
+}
+    }
+</script>
+</html>

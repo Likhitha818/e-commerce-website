@@ -1,0 +1,94 @@
+<html>
+<head> <title> registration</title>
+    <style>
+       
+        body{
+            background-image: url(https://img.freepik.com/premium-photo/book-stack-library-room-blurred-bookshelf-background_42691-514.jpg);
+        }
+        .register{
+            background-color:rgb(237, 228, 170) ;
+            height:230px;
+            width:330px;
+            align-content:center;
+            padding:10px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .reg{
+            align-content: center;
+            height: 30px;
+            width:130px;
+            padding:50px;
+            justify-content: space-around;
+            margin-top: 5px;
+            margin-bottom: 5%;
+        }
+        
+        </style>
+</head>
+<body>
+    <header>
+        <center><h2 style="color: rgb(144, 96, 6);">www.amazon.com</h2></center>
+    </header>
+    <p><b><center> <a href="wt1.html">back to homepage</a><h1>Registration</h1></center><h2> <right><a href="profile2.html">profile</a></br><a href="catalog1.html">catalogue</a></br><a href="cart1.html">cart</a></right></h2></b></p>
+    
+    <center>
+    <section class="register">
+        <section class="reg">
+        <form>
+            <input type="text"  placeholder="enter your name" id="username"/>
+        </br>
+            <input type="text"   placeholder="enter email" id="email"/></br>
+            <input type="password"   placeholder="enter password" id="pass"/></br>
+            <input type="password"   placeholder="confirm password" id="conf"/></br>
+            </form>
+            </section>
+            <section class="radio">
+            <form>
+            <input type="radio" name="text5" >male
+            <input type="radio" name="text5" >female
+            </br>
+            </form>
+            </section>
+            <section class="btn">
+        <form>
+            <button style="width:180px; height: 30px;  border:none;border-radius: 4px; background-color: pink; cursor: pointer;" onclick="validation()">register</button>
+        </form>
+            </section>
+</section>
+    </center>
+</body>
+<script>{ 
+    function validation()
+    {    let user=document.getElementById("username").value;
+        let mail=document.getElementById("email").value;
+        let passwor=document.getElementById("pass").value;
+        let con=document.getElementById("conf").value;
+        let regex=/^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+    let res = regex.test(mail);
+    if(mail===""||passwor===""||user==="")
+    {
+        alert("enter all details")
+    }
+else if(!res)
+{
+    alert("invalid email");
+}
+ else if(passwor.length<8)
+ {
+    alert("set password with min 8 characters");
+ }
+ else if(!(passwor==con))
+ {
+    alert("enter correct password");
+ }
+    
+    else{
+alert("successfully registered");
+    }
+}
+    }
+</script>
+
+</html>

@@ -1,0 +1,85 @@
+<html>
+<head>
+    <title>Profile Page</title>
+    <style>
+        body {
+            background-image: url(https://img.freepik.com/premium-photo/book-stack-library-room-blurred-bookshelf-background_42691-514.jpg);
+        }
+
+        .abc {
+            align-content: center;
+            padding: 3px;
+            background-color: palevioletred;
+            height: 320px;
+            width: 350px;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <center><h2 style="color: rgb(144, 96, 6);">www.amazon.com</h2></center>
+    </header>
+    <p>
+        <b><right><a href="wt1.html">back to home</a></right><center><h1>Your Profile</h1></center></b>
+        <h2><right><a href="catalog1.html">catalogue</a></br><a href="cart1.html">cart</a></br><a href="#">Your Orders</a></right></h2>
+    </p>
+
+    <center>
+        <section class="abc">
+            <form>
+                <p>User name</br>
+                    <input type="text" placeholder="user's name" id="user"></br>
+                    Phone number</br>
+                    <input type="number" placeholder="phone number" id="num"></br>
+                    email address</br>
+                    <input type="text" placeholder="enter email" id="email"></br>
+                    Address</br>
+                    <input type="text" placeholder="H-NO,area,city" id="add"></br>
+                    <input type="text" placeholder="state"></br>
+                </p>
+            </form>
+            <form>
+                <input type="radio" name="text5">male
+                <input type="radio" name="text5">female
+                </br>
+            </form>
+            <form>
+                <right><b><button style="width: 160px;height: 30px;border-radius: 4px; background-color: rgb(225, 22, 22);border: none; cursor: pointer;"
+                        onclick="validate()">Save</button></b></right>
+            </form>
+        </section>
+    </center>
+</body>
+<script>
+    function validate() {
+        let usern = document.getElementById("user").value;
+        let phon = document.getElementById("num").value;
+        let mail = document.getElementById("email").value;
+        let adrs = document.getElementById("add").value;
+        let regexp = /^[a-z0-9]+@[a-z]+\.[a-z]{2,3}$/;
+        let resu = regexp.test(mail);
+        let regex = /^[a-zA-Z0-9]+$/;
+        let regexpr = /^[0-9]{10}$/;
+        let resul = regexpr.test(phon);
+        let res = regex.test(usern);
+
+        if (mail === "" || adrs === "" || usern === "" || phon === "") {
+            alert("Enter all details");
+        } 
+        else if (!res) {
+            alert("Invalid username");
+        }
+        else if (!resul) {
+            alert("Invalid number");
+        }
+         else if (!resu) 
+        {
+            alert("Invalid email");
+        }
+        else {
+            alert("successfully saved profile");
+        }
+    }
+</script>
+</html>
